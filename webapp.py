@@ -10,7 +10,7 @@ HTML = '''
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Assistant</title>
+    <title>Crystal</title>
     <style>
         body { 
             font-family: Arial; 
@@ -63,7 +63,7 @@ HTML = '''
     </style>
 </head>
 <body>
-    <h1>My Assistant</h1>
+    <h1>Crystal</h1>
     <div id="chat"></div>
     <input id="input" placeholder="Type a message..." onkeypress="if(event.key==='Enter') send()">
     <button onclick="send()">Send</button>
@@ -105,7 +105,7 @@ def chat():
     response = client.messages.create(
         model="claude-sonnet-4-5",
         max_tokens=1024,
-        system="You are a helpful AI assistant named Aria. Be concise and friendly.",
+        system="You are a helpful AI assistant named Crystal. Be concise and friendly.",
         messages=history
     )
     return jsonify({"reply": response.content[0].text})
